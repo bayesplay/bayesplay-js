@@ -1,0 +1,28 @@
+{
+  "name": "bayesplay-wasm",
+  "version": "0.1.0",
+  "description": "Bayesian analysis powered by Rust/WASM with inlined binary",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build:wasm": "wasm-pack build --target web",
+    "build:codegen": "bun scripts/codegen.ts",
+    "build:ts": "tsc",
+    "build": "bun run build:wasm && bun run build:codegen && bun run build:ts",
+    "test": "bun test"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5"
+  }
+}
