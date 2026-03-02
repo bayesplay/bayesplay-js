@@ -353,7 +353,7 @@ var __wbg_wasmBytes = __wbg_base64ToBytes(WASM_BASE64);
 var __wbg_imports = __wbg_get_imports();
 var { instance: __wbg_instance } = await WebAssembly.instantiate(__wbg_wasmBytes, __wbg_imports);
 __wbg_finalize_init(__wbg_instance, undefined);
-// index.ts
+// bayesfactor.ts
 var transform = (definition) => {
   const params = Object.entries(definition).flatMap(([name, value]) => {
     if (typeof value === "number") {
@@ -365,7 +365,7 @@ var transform = (definition) => {
     return [];
   });
   const actual = {
-    family: definition.distribution,
+    family: definition.family,
     params
   };
   return actual;
