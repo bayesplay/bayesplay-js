@@ -103,4 +103,3 @@ export function bayesfactor(likelihood: Likelihood, alt_prior: Prior, null_prior
   const h0 = transform(null_prior)
   return bf(data, h1, h0);
 }
-export default bayesfactor;
