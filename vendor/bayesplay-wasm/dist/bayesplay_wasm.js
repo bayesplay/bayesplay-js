@@ -15,14 +15,14 @@ export function bayesfactor(likelihood, alternative_prior, null_prior) {
 }
 
 /**
- * @param {any} data
+ * @param {any} likelihood
  * @param {Float64Array} x_values
  * @returns {any}
  */
-export function likelihood(data, x_values) {
+export function likelihood(likelihood, x_values) {
     const ptr0 = passArrayF64ToWasm0(x_values, wasm.__wbindgen_malloc);
     const len0 = WASM_VECTOR_LEN;
-    const ret = wasm.likelihood(data, ptr0, len0);
+    const ret = wasm.likelihood(likelihood, ptr0, len0);
     if (ret[2]) {
         throw takeFromExternrefTable0(ret[1]);
     }

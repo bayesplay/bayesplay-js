@@ -2,4 +2,4 @@
 
 export function bayesfactor(likelihood: any, alternative_prior: any, null_prior: any): number;
 
-export function likelihood(data: any, x_values: Float64Array): any;
+export function likelihood(likelihood: any, x_values: Float64Array): any;
