@@ -408,8 +408,8 @@ var transform = (definition, kind) => {
   };
   return transformed_definition;
 };
-function bayesfactor2(likelihood2, alt_prior, null_prior) {
-  const data = transform(likelihood2, "likelihood");
+function bayesfactor2(likelihood3, alt_prior, null_prior) {
+  const data = transform(likelihood3, "likelihood");
   const h1 = transform(alt_prior, "prior");
   const h0 = transform(null_prior, "prior");
   return bayesfactor(data, h1, h0);

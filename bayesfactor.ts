@@ -1,6 +1,6 @@
 
-import { bayesfactor as bf } from "bayesplay-wasm";
-
+import { bayesfactor as bf, likelihood } from "bayesplay-wasm";
+export { likelihood } from "bayesplay-wasm";
 type PriorParams = {
   normal: ["mean", "sd"];
   point: ["point"];

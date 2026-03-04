@@ -21,7 +21,7 @@ This project was created using `bun init` in bun v1.3.4. [Bun](https://bun.com) 
 To refresh the vendored copy from your sibling checkout:
 
 ```bash
-rm -rf vendor/bayesplay-wasm
+\rm -rf vendor/bayesplay-wasm
 mkdir -p vendor/bayesplay-wasm
 cp -R ../bayesplay-wasm/dist vendor/bayesplay-wasm/
 cp ../bayesplay-wasm/package.json vendor/bayesplay-wasm/
