@@ -395,6 +395,11 @@ var __wbg_imports = __wbg_get_imports();
 var { instance: __wbg_instance } = await WebAssembly.instantiate(__wbg_wasmBytes, __wbg_imports);
 __wbg_finalize_init(__wbg_instance, undefined);
 // bayesfactor.ts
+function likelihood2(likelihood3, x_values) {
+  const data_model = transform(likelihood3, "likelihood");
+  let x_array = new Float64Array(x_values);
+  return likelihood(data_model, x_array);
+}
 var PRIOR_PARAMS = {
   normal: ["mean", "sd"],
   point: ["point"],
@@ -436,6 +441,6 @@ function bayesfactor2(likelihood3, alt_prior, null_prior) {
   return bayesfactor(data, h1, h0);
 }
 export {
-  likelihood,
+  likelihood2 as likelihood,
   bayesfactor2 as bayesfactor
 };

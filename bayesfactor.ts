@@ -1,6 +1,13 @@
 
-import { bayesfactor as bf, likelihood } from "bayesplay-wasm";
-export { likelihood } from "bayesplay-wasm";
+import { bayesfactor as bf, likelihood as likelihood_wasm } from "bayesplay-wasm";
+
+export function likelihood(likelihood: Likelihood, x_values: number[]): number[] {
+  const data_model = transform(likelihood, "likelihood")
+  let x_array = new Float64Array(x_values);
+  return likelihood_wasm(data_model, x_array)
+}
+
+
 type PriorParams = {
   normal: ["mean", "sd"];
   point: ["point"];
