@@ -1,8 +1,11 @@
 {
   "name": "bayesplay-js",
-  "module": "index.ts",
+  "module": "src/index.ts",
   "version": "0.0.1",
   "type": "module",
+  "scripts": {
+    "build": "mkdir -p dist && bun build ./src/index.ts --outfile ./dist/index.js --minify-whitespace --minify-syntax --keep-names"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },

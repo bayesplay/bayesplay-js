@@ -29,6 +29,21 @@ export function likelihood(likelihood, x_values) {
     return takeFromExternrefTable0(ret[0]);
 }
 
+/**
+ * @param {any} prior
+ * @param {Float64Array} x_values
+ * @returns {any}
+ */
+export function prior(prior, x_values) {
+    const ptr0 = passArrayF64ToWasm0(x_values, wasm.__wbindgen_malloc);
+    const len0 = WASM_VECTOR_LEN;
+    const ret = wasm.prior(prior, ptr0, len0);
+    if (ret[2]) {
+        throw takeFromExternrefTable0(ret[1]);
+    }
+    return takeFromExternrefTable0(ret[0]);
+}
+
 function __wbg_get_imports() {
     const import0 = {
         __proto__: null,
