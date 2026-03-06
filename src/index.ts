@@ -2,18 +2,19 @@ import {
   bayesfactor,
   likelihood,
   prior,
+  multiplot,
   type NormalLikelihood,
   type NormalPrior,
   type PointPrior,
   type UniformPrior,
 } from "./bayesfactor";
 
-console.log("Hello world!");
 
 export {
   bayesfactor,
   likelihood,
   prior,
+  multiplot,
   type NormalLikelihood,
   type NormalPrior,
   type PointPrior,

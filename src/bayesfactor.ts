@@ -3,7 +3,7 @@ import { bayesfactor as bf, likelihood as likelihood_wasm, prior as prior_wasm, 
 type PlotPoint = { x: number; y: number };
 type MultiPlot = { x: number, posterior: number, likelihood: number, prior: number }[];
 
-export function multplot(likelihood: Likelihood, prior: Prior, values: number[]): { likelihood: PlotPoint[]; alt_prior: PlotPoint[]; null_prior: PlotPoint[] } {
+export function multiplot(likelihood: Likelihood, prior: Prior, values: number[]): { likelihood: PlotPoint[]; alt_prior: PlotPoint[]; null_prior: PlotPoint[] } {
   const likelihood_definition = transform(likelihood, "likelihood");
   const prior_definition = transform(prior, "prior");
   return likelihood_prior(likelihood_definition, prior_definition, new Float64Array(values));
